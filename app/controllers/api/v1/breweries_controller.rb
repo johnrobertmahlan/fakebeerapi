@@ -4,10 +4,13 @@ module Api
 
       def index
         if params.has_key?("name")
-          name = params[:name].split(/_/).map {|s| s.capitalize}.join(" ")
+          name = params[:name].split(/_/).map {|s| s.capitalize}.join(" ") 
           @brewery = Brewery.find_by(name: name)
-
-          render json: { status: 'Success', message: 'You found it!', data: @brewery }, status: :ok
+          if !@brewery.nil? 
+            render json: { status: 'Success', message: 'You found it!', data: @brewery }, status: :ok
+          else
+            render json: { status: 'Fail', message: 'There are no breweries with that name' }, status: :unprocessable_entity
+          end
         else 
           @breweries = Brewery.all 
 

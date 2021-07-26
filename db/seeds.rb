@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do
-  Brewery.create!(name: Faker::Beer.brand, state: Faker::Address.state_abbr)
-end
+# 10.times do
+#   Brewery.create!(name: Faker::Beer.brand, state: Faker::Address.state_abbr)
+# end
+
+
+# Brewery.all.each do |brewery|
+#   3.times do
+#     Beer.create!(name: Faker::Beer.name, style: Faker::Beer.style, abv:rand(1.0..15.0), brewery: brewery)
+#   end
+# end
