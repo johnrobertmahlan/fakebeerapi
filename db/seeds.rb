@@ -11,8 +11,8 @@
 # end
 
 
-# Brewery.all.each do |brewery|
-#   3.times do
-#     Beer.create!(name: Faker::Beer.name, style: Faker::Beer.style, abv:rand(1.0..15.0), brewery: brewery)
-#   end
-# end
+Brewery.all.each do |brewery|
+  3.times do
+    Beer.create!(name: Faker::Beer.name, style: Faker::Beer.style, abv:rand(1.0..15.0), brewery: brewery)
+  end
+end
